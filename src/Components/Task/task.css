@@ -1,0 +1,16 @@
+.task {
+    padding: 12px;
+}
+.task-edit-icon {
+    color: #167BFF;
+    cursor: pointer;
+}
+.task-delete-icon {
+    color:#DC3545;
+    cursor: pointer;
+}
+
+.task-delete-warning-icon {
+    font-size: 60px;
+    color: #C82333;
+}

@@ -1,0 +1,17 @@
+.priority-label {
+    margin: 10px;
+}
+.no-task {
+    border: solid 1px lightgray;
+    padding: 20px;
+    margin: 50px;
+    color: grey;
+}
+
+.task-draggable {
+    cursor: move;
+}
+
+.task-section {
+    box-shadow:0 1px 6px rgba(32, 33, 36, 0.28);
+}
