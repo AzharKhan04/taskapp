@@ -103,7 +103,9 @@ export const AddTask = (props) => {
 
           <div className="form-group">
             <label>Assign To</label>
-            <Select
+            {
+              props.users &&
+              <Select
               value={props.users
                 .map((u) => {
                   return { value: u.id, label: u.name };
@@ -116,6 +118,9 @@ export const AddTask = (props) => {
                 return { value: u.id, label: u.name };
               })}
             />
+
+            }
+            
           </div>
 
           <div className="form-group">

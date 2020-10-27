@@ -8,8 +8,8 @@ import UIModal from "../../Widget/Modal";
 import { BsXCircleFill } from "react-icons/bs";
 import TaskService from "./TaskService";
 import AddTask from "./AddTask";
-import Button from '../../Widget/Button';
-import moment from 'moment'
+import Button from "../../Widget/Button";
+import moment from "moment";
 
 export const TaskView = (props) => {
   const [modal, setModal] = useState(false);
@@ -73,16 +73,10 @@ export const TaskView = (props) => {
               <div className="row">
                 <div className="col col-md-12">
                   <p>Are you sure want to delete the task ?</p>
-                  <Button
-                    onClick={performDelete}
-                    className="btn btn-danger"
-                  >
+                  <Button onClick={performDelete} className="btn btn-danger">
                     DELETE
                   </Button>
-                  <Button
-                    onClick={cancel}
-                    className="btn btn-default"
-                  >
+                  <Button onClick={cancel} className="btn btn-default">
                     CANCEL
                   </Button>
                 </div>
@@ -108,21 +102,28 @@ export const TaskView = (props) => {
       )}
       <Card>
         <div className="card-body">
-        {props.data.created_on && (
+          {props.data.created_on && (
             <div className="row">
               <div className="col col-md-12">
-                <div> {moment(props.data.created_on).format('DD MMM YYYY hh:mm A')}</div>
+                <div>
+                  {" "}
+                  {moment(props.data.created_on).format("DD MMM YYYY hh:mm A")}
+                </div>
               </div>
             </div>
           )}
           {props.data.due_date && (
             <div className="row">
               <div className="col col-md-12">
-                <div className="badge badge-info"> {"Due Date"} : {moment(props.data.due_date).format('DD MMM YYYY')}</div>
+                <div className="badge badge-info">
+                  {" "}
+                  {"Due Date"} :{" "}
+                  {moment(props.data.due_date).format("DD MMM YYYY")}
+                </div>
               </div>
             </div>
           )}
-          <br/>
+          <br />
 
           {
             <div className="row">
@@ -143,26 +144,27 @@ export const TaskView = (props) => {
               </div>
             </div>
           )}
-          <br/>
+          <br />
 
-{
+          {
             <div className="row">
               <div className="col col-md-4"></div>
-
-              <div className="col col-md-2 text-right">
-                <div onClick={onEditTask} className="task-edit-icon">
-                  <BsPencil />
+              {props.onUpdate && (
+                <div className="col col-md-2 text-right">
+                  <div onClick={onEditTask} className="task-edit-icon">
+                    <BsPencil />
+                  </div>
                 </div>
-              </div>
-              <div onClick={onDelete} className="col col-md-2 text-right">
-                <div className="task-delete-icon">
-                  <BsFillTrashFill />
+              )}
+              {props.onDelete && (
+                <div onClick={onDelete} className="col col-md-2 text-right">
+                  <div className="task-delete-icon">
+                    <BsFillTrashFill />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           }
-
-         
         </div>
       </Card>
     </div>

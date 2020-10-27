@@ -164,7 +164,7 @@ export const Dashboard = (props) => {
               <div className="col col-md-4 text-center">
                 <Card>
                   <div
-                    className ="task-section"
+                    className="task-section"
                     onDragOver={(evt) => onDragOver(evt)}
                     onDrop={(evt) => onDrop(evt, index)}
                   >
